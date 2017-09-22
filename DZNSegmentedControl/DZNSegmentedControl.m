@@ -104,18 +104,9 @@
     return CGSizeMake((self.width ? self.width : self.superview.bounds.size.width), self.height);
 }
 
-- (void)sizeToFit
-{
-    CGRect rect = self.frame;
-    rect.size = [self sizeThatFits:rect.size];
-    self.frame = rect;
-}
-
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
-    [self sizeToFit];
     
     if ([self buttons].count == 0) {
         _selectedSegmentIndex = -1;
